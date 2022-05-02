@@ -21,11 +21,11 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Transaction;
  * transaction logs are stored in a LinkedList in memory.
  */
 public class PersistentTransactionDAO implements TransactionDAO {
-    private final List<Transaction> transactions;
+   // private final List<Transaction> transactions;
     private DBHelper db;
 
     public PersistentTransactionDAO(DBHelper db) {
-        transactions = new LinkedList<>();
+        //transactions = new LinkedList<>();
         this.db = db;
 
     }
