@@ -18,10 +18,10 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
  */
 
 public class PersistentAccountDAO implements AccountDAO{
-    private final Map<String, Account> accounts;
+
     private final DBHelper db;
     public PersistentAccountDAO(DBHelper db) {
-        this.accounts = new HashMap<>();
+
         this.db = db;
     }
 
@@ -89,32 +89,17 @@ public class PersistentAccountDAO implements AccountDAO{
 
     @Override
     public void removeAccount(String accountNo) throws InvalidAccountException {
-        if (!accounts.containsKey(accountNo)) {
-            String msg = "Account " + accountNo + " is invalid.";
-            throw new InvalidAccountException(msg);
-        }
+
         //accounts.remove(accountNo);
         db.deleteAccount(accountNo);
     }
 
     @Override
     public void updateBalance(String accountNo, ExpenseType expenseType, double amount) throws InvalidAccountException {
-      /* Cursor res = db.getAccount(accountNo);
-        Account account;
-        if (res.getCount()>0) {
-            String acc_no = res.getString(0);
-            String bank=res.getString(1);;
-            String owner= res.getString(2);;
-            Double balance = res.getDouble(3);
-            account = new Account(acc_no,bank,owner,balance);
-        }
-        else{
-            String msg = "Account " + accountNo + " is invalid.";
-            throw new InvalidAccountException(msg);
-        } */
 
-      PersistentAccountDAO temp = new PersistentAccountDAO(db);
-        Account account = temp.getAccount(accountNo);
+
+
+        Account account = getAccount(accountNo);
         if(!(account instanceof Account)){
             String msg = "Account " + accountNo + " is invalid.";
             throw new InvalidAccountException(msg);
@@ -133,7 +118,7 @@ public class PersistentAccountDAO implements AccountDAO{
                 account.setBalance(balance1);
                 break;
         }
-        accounts.put(accountNo, account);
+
        db.updateBalance(accountNo,balance1);
     }
 }

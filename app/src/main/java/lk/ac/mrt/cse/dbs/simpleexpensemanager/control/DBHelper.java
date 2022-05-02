@@ -74,7 +74,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public boolean deleteAccount(String accountNo) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
         Cursor cursor = db.rawQuery("SELECT * FROM ACCOUNT WHERE acc_no = ?", new String[]{accountNo});
         if (cursor.getCount() > 0) {
             long result = db.delete("ACCOUNT", "acc_no=?", new String[]{accountNo});

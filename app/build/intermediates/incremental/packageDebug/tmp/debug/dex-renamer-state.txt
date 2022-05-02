@@ -1,4 +1,4 @@
-#Sat Apr 30 18:37:16 IST 2022
+#Mon May 02 19:09:07 IST 2022
 base.0=C\:\\Users\\shang\\gitrepo\\SimpleExpenseManager\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

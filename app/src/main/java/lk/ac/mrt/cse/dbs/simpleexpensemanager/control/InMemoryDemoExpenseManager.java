@@ -28,7 +28,7 @@ import android.content.Context;
 /**
  *
  */
-public class InMemoryDemoExpenseManager extends ExpenseManager {
+public class  InMemoryDemoExpenseManager extends ExpenseManager {
 
     public InMemoryDemoExpenseManager(Context context) {
         setup(context);
