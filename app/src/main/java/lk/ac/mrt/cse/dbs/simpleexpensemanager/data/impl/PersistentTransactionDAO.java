@@ -55,8 +55,6 @@ public class PersistentTransactionDAO implements TransactionDAO {
             Date date =formatter.parse(date_temp);
             Double amount= res.getDouble(3);
             String type_temp = res.getString(4);
-            Log.d("myTag", type_temp);
-
             type = ExpenseType.valueOf(type_temp);
             Transaction temp = new Transaction(date,acc_no,type,amount);
             output.add(temp);

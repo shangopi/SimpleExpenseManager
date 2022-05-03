@@ -11,10 +11,10 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "ExpenseManager.db";
+
 
     public DBHelper(Context context) {
-        super(context, DATABASE_NAME , null, 1);
+        super(context, "190199A" , null, 1);
     }
 
     @Override
